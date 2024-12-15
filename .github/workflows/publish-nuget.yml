@@ -20,12 +20,15 @@ jobs:
             fetch-depth: 0
 
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v3.1.1
+        uses: gittools/actions/gitversion/setup@v5
         with:
             versionSpec: '6.0.x'
 
       - name: Determine Version
-        uses: gittools/actions/gitversion/execute@v3.1.1
+        uses: gittools/actions/gitversion/execute@v5
+
+      - name: Generate Version
+        uses: GitVersion/gitversion-action@v5
                     
       # Configurar .NET
       - name: Setup .NET SDK
