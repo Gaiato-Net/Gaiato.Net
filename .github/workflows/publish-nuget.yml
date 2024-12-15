@@ -20,9 +20,7 @@ jobs:
 
       - name: GitTools
         uses: GitTools/actions@v3.1.1
-        with:
-            versionSpec: '6.0.x'
-            
+                    
       # Configurar .NET
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
