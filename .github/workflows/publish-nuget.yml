@@ -1,0 +1,43 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Configurar .NET
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.x'
+
+      # Restaurar dependências
+      - name: Restore Dependencies
+        run: dotnet restore Gaiato.Net.Network/Gaiato.Net.Network.csproj
+
+      # Build do Projeto
+      - name: Build Project
+        run: dotnet build Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-restore
+
+      # # Executar Testes
+      # - name: Run Tests
+      #   run: dotnet test Gaiato.Net.Network.Tests/Gaiato.Net.Network.Tests.csproj --no-build --verbosity normal
+
+      # Publicar no NuGet
+      - name: Publish to NuGet
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          dotnet pack Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
+          dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
