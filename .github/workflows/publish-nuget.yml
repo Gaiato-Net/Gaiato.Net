@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v3.1.1
+        with:
+            versionSpec: '6.0.x'
+
       # Checkout do código
       - name: Checkout Code
         uses: actions/checkout@v4
