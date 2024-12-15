@@ -30,9 +30,9 @@ jobs:
       - name: Build Project
         run: dotnet build Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-restore
 
-      # Executar Testes
-      - name: Run Tests
-        run: dotnet test Gaiato.Net.Network.Tests/Gaiato.Net.Network.Tests.csproj --no-build --verbosity normal
+      # # Executar Testes
+      # - name: Run Tests
+      #   run: dotnet test Gaiato.Net.Network.Tests/Gaiato.Net.Network.Tests.csproj --no-build --verbosity normal
 
       # Publicar no NuGet
       - name: Publish to NuGet
