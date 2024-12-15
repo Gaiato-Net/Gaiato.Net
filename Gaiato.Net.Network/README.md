@@ -1,13 +1,13 @@
 ﻿# Gaiato.Net.Network
 
 [![NuGet](https://img.shields.io/nuget/v/Gaiato.Net.Network)](https://www.nuget.org/packages/Gaiato.Net.Network/)
-[![Build Status](https://github.com/seu-usuario/seu-repositorio/actions/workflows/publish-nuget.yml/badge.svg)](https://github.com/seu-usuario/seu-repositorio/actions)
+[![Build Status](https://github.com/Gaiato-Net/Gaiato.Net/actions/workflows/publish-nuget.yml/badge.svg)](https://github.com/Gaiato-Net/Gaiato.Net/actions)
 
 ## Descrição
 
-**Gaiato.Net.Network** é um pacote NuGet que fornece uma maneira simples e eficiente para obter o endereço IP externo de uma máquina utilizando APIs públicas, como o `ipify`.
+**Gaiato.Net.Network** é um pacote NuGet que fornece uma maneira simples e eficiente de consultar APIS públicas como por exemplo, para obter o endereço IP externo de uma máquina utilizando o `ipify`.
 
-O pacote foi desenvolvido seguindo os princípios de **Clean Code** e **SOLID**, garantindo flexibilidade, testabilidade e manutenibilidade. É compatível com projetos .NET 6 ou superior.
+O pacote foi desenvolvido seguindo os princípios de **Clean Code** e **SOLID**, garantindo flexibilidade, testabilidade e manutenibilidade. É compatível com projetos .NET 7 ou superior.
 
 ## Recursos
 
