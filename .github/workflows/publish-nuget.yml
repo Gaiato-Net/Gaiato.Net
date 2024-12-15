@@ -52,9 +52,9 @@ jobs:
       #   run: dotnet test Gaiato.Net.Network.Tests/Gaiato.Net.Network.Tests.csproj --no-build --verbosity normal
 
       # Publicar no NuGet
-      - name: Publish to NuGet
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: |
-          dotnet pack -p:Version=$(GitVersion.NuGetVersion) Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
-          dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+      # - name: Publish to NuGet
+      #   env:
+      #     NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      #   run: |
+      #     dotnet pack -p:Version=$(GitVersion.NuGetVersion) Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
+      #     dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
