@@ -11,11 +11,12 @@
 		<Authors>Mr. Gaiato</Authors>
 		<Company>Gaiato.Net</Company>
 		<PackageId>Gaiato.Net.Network</PackageId>
-		<Version>1.0.2</Version>
-		<Description>Um pacote para identificar o IP externo utilizando APIs públicas.</Description>
+		<Version>1.0.3</Version>
+		<Description>Um pacote para consultar APIs públicas.</Description>
 		<PackageTags>IP, External, HttpClient</PackageTags>
-		<RepositoryUrl>https://github.com/gaiato-net</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Gaiato-Net/Gaiato.Net</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,6 +30,7 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	 <None Include="README.md" Pack="true" PackagePath="\"/>
+	 <None Include="icon.png" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
 </Project>
