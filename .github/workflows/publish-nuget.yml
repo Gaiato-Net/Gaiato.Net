@@ -25,9 +25,6 @@ jobs:
             versionSpec: '6.0.x'
       - name: Determine Version
         uses: gittools/actions/gitversion/execute@v3.1.1
-                    
-      - name: Generate Version
-        uses: GitVersion/gitversion-action@v3.1.1
 
       # Configurar .NET
       - name: Setup .NET SDK
@@ -52,5 +49,5 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          dotnet pack Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
+          dotnet pack -p:Version=$(GitVersion.NuGetVersion) Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
           dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
