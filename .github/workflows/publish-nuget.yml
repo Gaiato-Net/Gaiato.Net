@@ -56,5 +56,5 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          dotnet pack -p:Version=$(steps.version_step.outputs.MajorMinorPatch) Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
+          dotnet pack -p:Version=$(env.GitVersion_MajorMinorPatch) Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
           dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
