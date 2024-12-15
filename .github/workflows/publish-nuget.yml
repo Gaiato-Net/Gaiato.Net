@@ -12,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v3.1.1
-        with:
-            versionSpec: '6.0.x'
 
       # Checkout do código
       - name: Checkout Code
@@ -23,8 +19,13 @@ jobs:
         with:
             fetch-depth: 0
 
-      - name: GitTools
-        uses: GitTools/actions@v3.1.1
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v3.1.1
+        with:
+            versionSpec: '6.0.x'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v3.1.1
                     
       # Configurar .NET
       - name: Setup .NET SDK
