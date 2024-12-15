@@ -24,4 +24,11 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <None Update="README.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	 <None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
 </Project>
