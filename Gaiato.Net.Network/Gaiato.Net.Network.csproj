@@ -10,11 +10,12 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Authors>Mr. Gaiato</Authors>
 		<Company>Gaiato.Net</Company>
-		<PackageId>ExternalIpService</PackageId>
-		<Version>1.0.0</Version>
+		<PackageId>Gaiato.Net.Network</PackageId>
+		<Version>1.0.2</Version>
 		<Description>Um pacote para identificar o IP externo utilizando APIs públicas.</Description>
 		<PackageTags>IP, External, HttpClient</PackageTags>
 		<RepositoryUrl>https://github.com/gaiato-net</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
