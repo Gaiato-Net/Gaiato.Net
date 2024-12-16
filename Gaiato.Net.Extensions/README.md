@@ -4,7 +4,9 @@
 
 ## Descrição
 
-Uma biblioteca de extensões .NET para sanitização segura de strings HTML, oferecendo proteção contra XSS (Cross-Site Scripting) e outras vulnerabilidades de segurança.
+Uma biblioteca de extensões .NET.
+
+Inclue sanitização segura de strings HTML, oferecendo proteção contra XSS (Cross-Site Scripting) e outras vulnerabilidades de segurança.
 
 ## Instalação
 
