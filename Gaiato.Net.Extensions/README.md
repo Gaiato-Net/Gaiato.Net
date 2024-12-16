@@ -2,13 +2,13 @@
 [![NuGet](https://img.shields.io/nuget/v/Gaiato.Net.Network)](https://www.nuget.org/packages/Gaiato.Net.Network/)
 [![Build Status](https://github.com/Gaiato-Net/Gaiato.Net/actions/workflows/publish-nuget.yml/badge.svg)](https://github.com/Gaiato-Net/Gaiato.Net/actions)
 
-## DescriÁ„o
+## Descri√ß√£o
 
-Uma biblioteca de extensıes .NET.
+Uma biblioteca de extens√µes .NET.
 
-Inclue sanitizaÁ„o segura de strings HTML, oferecendo proteÁ„o contra XSS (Cross-Site Scripting) e outras vulnerabilidades de seguranÁa.
+Inclue sanitiza√ß√£o segura de strings HTML, oferecendo prote√ß√£o contra XSS (Cross-Site Scripting) e outras vulnerabilidades de seguran√ßa.
 
-## InstalaÁ„o
+## Instala√ß√£o
 
 ```bash
 dotnet add package Gaiato.Net.Extensions
@@ -16,25 +16,25 @@ dotnet add package Gaiato.Net.Extensions
 
 ## Funcionalidades
 
-- RemoÁ„o de tags HTML perigosas e seu conte˙do
-- RemoÁ„o de atributos potencialmente maliciosos
-- Filtragem de protocolos n„o permitidos
-- RemoÁ„o de expressıes JavaScript/CSS perigosas
-- CodificaÁ„o HTML de caracteres especiais
-- PreservaÁ„o opcional de quebras de linha
-- ProteÁ„o contra ReDoS (Regex Denial of Service)
+- Remo√ß√£o de tags HTML perigosas e seu conte√∫do
+- Remo√ß√£o de atributos potencialmente maliciosos
+- Filtragem de protocolos n√£o permitidos
+- Remo√ß√£o de express√µes JavaScript/CSS perigosas
+- Codifica√ß√£o HTML de caracteres especiais
+- Preserva√ß√£o opcional de quebras de linha
+- Prote√ß√£o contra ReDoS (Regex Denial of Service)
 - Alta performance com Regex compilados
 
 ## Como Usar
 
-### Uso B·sico
+### Uso B√°sico
 
 ```csharp
 using Gaiato.Net.Extensions;
 
-string conteudoPerigoso = "<script>alert('xss')</script>Ol·, mundo!";
+string conteudoPerigoso = "<script>alert('xss')</script>Ol√°, mundo!";
 string conteudoSeguro = conteudoPerigoso.ToSafe();
-// Resultado: "Ol·, mundo!"
+// Resultado: "Ol√°, mundo!"
 ```
 
 ### Preservando Quebras de Linha
@@ -45,29 +45,29 @@ Segunda linha
 Terceira linha";
 
 string resultadoComQuebras = textoFormatado.ToSafe(preserveNewLines: true);
-// MantÈm as quebras de linha no resultado
+// Mant√©m as quebras de linha no resultado
 ```
 
-### Exemplos de SanitizaÁ„o
+### Exemplos de Sanitiza√ß√£o
 
 ```csharp
 // Remove tags perigosas
-string html = "<iframe src='malicious.com'></iframe><p>Conte˙do seguro</p>";
+string html = "<iframe src='malicious.com'></iframe><p>Conte√∫do seguro</p>";
 string resultado = html.ToSafe();
-// Resultado: "<p>Conte˙do seguro</p>"
+// Resultado: "<p>Conte√∫do seguro</p>"
 
 // Remove atributos maliciosos
 html = "<img src='foto.jpg' onerror='alert(1)' />";
 resultado = html.ToSafe();
 // Remove o atributo onerror
 
-// Remove protocolos n„o permitidos
+// Remove protocolos n√£o permitidos
 html = "<a href='javascript:alert(1)'>Link</a>";
 resultado = html.ToSafe();
 // Remove o protocolo javascript:
 
 // Codifica caracteres especiais
-html = "<p>Tags & SÌmbolos</p>";
+html = "<p>Tags & S√≠mbolos</p>";
 resultado = html.ToSafe();
 // Codifica caracteres especiais como &amp;
 ```
@@ -118,34 +118,34 @@ resultado = apenasEspacos.ToSafe(); // Retorna string.Empty
 
 ## Desempenho
 
-A biblioteca utiliza v·rias otimizaÁıes para garantir o melhor desempenho possÌvel:
+A biblioteca utiliza v√°rias otimiza√ß√µes para garantir o melhor desempenho poss√≠vel:
 
 - Source Generators para Regex (requer .NET 7+)
 - HashSet para busca eficiente de tags e atributos
-- ComparaÁıes case-insensitive otimizadas
+- Compara√ß√µes case-insensitive otimizadas
 - Tratamento eficiente de strings
 
-## SeguranÁa
+## Seguran√ßa
 
-A biblioteca implementa v·rias camadas de proteÁ„o:
+A biblioteca implementa v√°rias camadas de prote√ß√£o:
 
-- RemoÁ„o completa de tags perigosas e seu conte˙do
-- SanitizaÁ„o de atributos HTML maliciosos
-- ProteÁ„o contra ataques baseados em expressıes CSS
-- Filtragem de protocolos n„o seguros
-- CodificaÁ„o HTML de caracteres especiais
-- Tratamento seguro de exceÁıes
-- ProteÁ„o contra ataques ReDoS
+- Remo√ß√£o completa de tags perigosas e seu conte√∫do
+- Sanitiza√ß√£o de atributos HTML maliciosos
+- Prote√ß√£o contra ataques baseados em express√µes CSS
+- Filtragem de protocolos n√£o seguros
+- Codifica√ß√£o HTML de caracteres especiais
+- Tratamento seguro de exce√ß√µes
+- Prote√ß√£o contra ataques ReDoS
 
 ## Requisitos
 
 - .NET 7.0 ou superior
 - C# 11.0 ou superior
 
-## LicenÁa
+## Licen√ßa
 
 MIT
 
 ## Contribuindo
 
-ContribuiÁıes s„o bem-vindas! Por favor, sinta-se ‡ vontade para submeter pull requests.
+Contribui√ß√µes s√£o bem-vindas! Por favor, sinta-se √† vontade para submeter pull requests.
