@@ -121,3 +121,13 @@ Este projeto está licenciado sob a licença **MIT**. Consulte o arquivo [LICENS
 ### Status do Build
 
 O processo de publicação é automatizado utilizando [GitHub Actions](https://github.com/seu-usuario/seu-repositorio/actions). Ao enviar um commit para a branch `main` ou criar uma tag no formato `v1.0.0`, o pacote será automaticamente publicado no [NuGet](https://www.nuget.org/packages/Gaiato.Net.Network/).
+
+
+### Projeto Gaiato.Net
+- [Site](https://gaiato.net)
+- [YouTube](https://www.youtube.com/@gaiatonet)
+- [X (Twitter)](https://twitter.com/gaiatonet)
+- [Linkedin](https://www.linkedin.com/company/101314141)
+- [Discord](https://discord.com/channels/1181618892985073745/1181618893689724980)
+### #SejaGaiato
+

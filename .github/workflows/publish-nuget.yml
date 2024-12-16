@@ -2,26 +2,37 @@ name: Publish NuGet Package
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     tags:
       - 'v*'
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-
+    # if: github.ref == 'refs/heads/main'
     steps:
+
       # Checkout do código
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-         fetch-depth: 0
-         
+            fetch-depth: 0
+
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v3.1.1
         with:
-          versionSpec: '6.0.x'
+            versionSpec: '6.0.x'
+
+      - name: Display GitVersion config
+        uses: gittools/actions/gitversion/command@v3.1.1
+        with:
+          useConfigFile: true
+          arguments: '/showConfig'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v3.1.1
+
       # Configurar .NET
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
@@ -30,20 +41,20 @@ jobs:
 
       # Restaurar dependências
       - name: Restore Dependencies
-        run: dotnet restore Gaiato.Net.Network/Gaiato.Net.Network.csproj
+        run: dotnet restore Gaiato.Net.sln
 
       # Build do Projeto
       - name: Build Project
-        run: dotnet build Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-restore
+        run: dotnet build Gaiato.Net.sln --configuration Release --no-restore
 
       # # Executar Testes
       # - name: Run Tests
       #   run: dotnet test Gaiato.Net.Network.Tests/Gaiato.Net.Network.Tests.csproj --no-build --verbosity normal
 
-      # Publicar no NuGet
+      #Publicar no NuGet
       - name: Publish to NuGet
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          dotnet pack Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-build --output ./nupkgs
+          dotnet pack Gaiato.Net.sln --p:Version=${{ env.GitVersion_MajorMinorPatch}}  --configuration Release --no-build --output ./nupkgs
           dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
