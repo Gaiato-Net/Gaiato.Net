@@ -19,10 +19,10 @@
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<!--<None Update="README.md">
+		<None Update="README.md">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>-->
-		<!--<None Include="README.md" Pack="true" PackagePath="\"/>-->
+		</None>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
 		<None Include="..\Assets\icon.png" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 </Project>
