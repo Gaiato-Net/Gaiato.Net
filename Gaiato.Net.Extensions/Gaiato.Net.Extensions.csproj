@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Mr. Gaiato</Authors>
+		<Company>Gaiato.Net</Company>
+		<PackageId>Gaiato.Net.Extensions</PackageId>
+		<Version>1.0.1</Version>
+		<Description>Um pacote com extensões úteis.</Description>
+		<PackageTags>Extensions, Strings, Sanitizer</PackageTags>
+		<RepositoryUrl>https://github.com/Gaiato-Net/Gaiato.Net</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
+	<ItemGroup>
+		<!--<None Update="README.md">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>-->
+		<!--<None Include="README.md" Pack="true" PackagePath="\"/>-->
+		<None Include="..\Assets\icon.png" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+</Project>
