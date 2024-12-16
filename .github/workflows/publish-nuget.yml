@@ -41,11 +41,11 @@ jobs:
 
       # Restaurar dependências
       - name: Restore Dependencies
-        run: dotnet restore Gaiato.Net.Network/Gaiato.Net.Network.csproj
+        run: dotnet restore Gaiato.Net.slnx
 
       # Build do Projeto
       - name: Build Project
-        run: dotnet build Gaiato.Net.Network/Gaiato.Net.Network.csproj --configuration Release --no-restore
+        run: dotnet build Gaiato.Net.slnx --configuration Release --no-restore
 
       # # Executar Testes
       # - name: Run Tests
@@ -56,5 +56,5 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          dotnet pack Gaiato.Net.Network/Gaiato.Net.Network.csproj --p:Version=${{ env.GitVersion_MajorMinorPatch}}  --configuration Release --no-build --output ./nupkgs
+          dotnet pack Gaiato.Net.slnx --p:Version=${{ env.GitVersion_MajorMinorPatch}}  --configuration Release --no-build --output ./nupkgs
           dotnet nuget push ./nupkgs/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
